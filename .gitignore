@@ -1,0 +1,11 @@
+# created by virtualenv automatically
+__pycache__
+*build
+*dist
+Paper_Kitchen_Decks
+Paper_Kitchen_Cards
+Scripts
+pyvenv.cfg
+*.spec
+Lib
+.git
