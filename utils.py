@@ -70,10 +70,15 @@ def export(cardlist, base_cardsize, name="latest_", dpi = 600):
 	cv2.imwrite(f'./Paper_Kitchen_Decks/{name} - Sheet {i}.png', sheet)
 
 def smart_search(name, all_cards): #not really smart yet
+	exact = []
+	include = []
 	for el in all_cards:
 		if name in el:
-			return True, el
-	return False, None
+			if name in el.split(' '):
+				exact.append(el)
+		else:
+			include.append(el)
+	return (bool(include) or bool(exact)), (exact, include)
 
 def online_search(name, engine = "scryfall.com"):
 	if engine == "scryfall.com":

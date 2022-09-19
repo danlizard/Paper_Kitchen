@@ -62,7 +62,8 @@ while running:
 			current_card = cv2.imread(f"./Paper_Kitchen_Cards/{current_card_name}.png")
 			updating['card'] = True
 		else:
-			success, current_card_name = utils.smart_search(values["SELECT_CARD"], all_cards)
+			success, (exact_matches, include_matches) = utils.smart_search(values["SELECT_CARD"], all_cards)
+			current_card_name = exact_matches[0]
 			if success:
 				current_card = cv2.imread(f"./Paper_Kitchen_Cards/{current_card_name}.png")
 				updating['card'] = True
