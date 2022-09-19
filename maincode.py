@@ -113,10 +113,10 @@ while running:
 		central_window["RESULT"].update(data=imgbytes)
 		updating['card'] = False
 	if updating['list']:
-		for i in range(len(card_names_ordered)):
-			central_window[f"CARD_{i}"].update(value = card_names_ordered[i], visible=True)
+		for i, card_name in enumerate(card_names_ordered):
+			central_window[f"CARD_{i}"].update(value = card_name, visible=True)
 			central_window[f"MINUS_{i}"].update(visible=True)
-			central_window[f"NUMBER_{i}"].update(value = cardlist[card_names_ordered[i]], visible=True)
+			central_window[f"NUMBER_{i}"].update(value = cardlist[card_name], visible=True)
 			central_window[f"PLUS_{i}"].update(visible=True)
 		for i in range(len(card_names_ordered), listing_scale):
 			central_window[f"CARD_{i}"].update(value = '', visible=False)
