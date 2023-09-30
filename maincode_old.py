@@ -4,7 +4,7 @@ import cv2
 import os
 import time
 
-import windows
+import windows.providers as providers
 import utils
 
 running = True
@@ -26,7 +26,7 @@ card_names_ordered = []
 
 current_card_name = ''
 
-central = windows.get_central(listing_scale, all_decks, all_cards)
+central = providers.get_central(listing_scale, all_decks, all_cards)
 central_window = sg.Window("Paper Kitchen v0.6", central)
 
 while running:
